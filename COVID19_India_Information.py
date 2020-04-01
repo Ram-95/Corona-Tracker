@@ -18,10 +18,10 @@ response = requests.get(url)
 html = response.text
 soup = bs.BeautifulSoup(html, 'lxml')
 
-x = soup.find('div', class_= 'content newtab').find('p').text.strip()
+x = soup.find('div', class_= 'status-update').find('span').text.strip()
 
 
-t_items = soup.find('div', class_= 'content newtab').find('table').find('tbody').findAll('tr')
+t_items = soup.find('div', class_= 'data-table').find('table').find('tbody').findAll('tr')
 head = ['S.No', 'State/UT', 'Total Active Cases', 'Discharged', 'Dead', 'Total Cases']
 
 
@@ -30,8 +30,8 @@ ind_table = PrettyTable(head)
 summ_table = PrettyTable(['Total', 'Total Active Cases', 'Discharged', 'Dead', 'Total Cases'])
 
 
-b = soup.findAll('div', class_='iblock_text')
-india_total = b[1].find('div').text.strip() + '(considering only Indian Citizens) = ' + b[1].find('span').text
+#b = soup.findAll('div', class_='iblock_text')
+#india_total = b[1].find('div').text.strip() + '(considering only Indian Citizens) = ' + b[1].find('span').text
 
 #Writing the state wise information to a file
 with open(state_filename, 'w') as f:
@@ -39,7 +39,7 @@ with open(state_filename, 'w') as f:
     writer.writerow([x.upper() for x in head])
 
 
-for i in t_items[:len(t_items)-2]:
+for i in t_items[:len(t_items)-1]:
     state_data = []
     for k in i.findAll('td'):
         state_data.append(k.text.strip())
@@ -51,11 +51,11 @@ for i in t_items[:len(t_items)-2]:
         writer.writerow(state_data)
 
 
-print('\n' + '*'*20 + ' INDIA - STATE WISE INFORMATION ' + x + ' ' + '*'*20 + '\n')
+print('\n' + '*'*20 + ' INDIA - STATE WISE INFORMATION (' + x + ') ' + '*'*20 + '\n')
 print(f'{ind_table}')
 
 summ = []
-for j in t_items[-2].findAll('td'):
+for j in t_items[-1].findAll('td'):
     summ.append(j.text.strip())
 
 total_cases = int(summ[1].replace('#', '')) + int(summ[2].replace('#', '')) + int(summ[3].replace('#', ''))
@@ -64,7 +64,7 @@ summ.append(total_cases)
 summ_table.add_row(summ)
 
 print(f'\nSummary:\n{summ_table}')
-print(f'\n[OFFICIAL DATA] - {india_total}\n')
+#print(f'\n[OFFICIAL DATA] - {india_total}\n')
 
 
 
