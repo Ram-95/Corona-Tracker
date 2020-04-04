@@ -39,7 +39,7 @@ with open(state_filename, 'w') as f:
     writer.writerow([x.upper() for x in head])
 
 
-for i in t_items[:len(t_items)-2]:
+for i in t_items[:len(t_items)-1]:
     state_data = []
     for k in i.findAll('td'):
         state_data.append(k.text.strip())
@@ -55,7 +55,7 @@ print('\n' + '*'*20 + ' INDIA - STATE WISE INFORMATION (' + x + ') ' + '*'*20 + 
 print(f'{ind_table}')
 
 summ = []
-for j in t_items[-2].findAll('td'):
+for j in t_items[-1].findAll('td'):
     summ.append(j.text.strip())
 
 total_cases = int(summ[1].replace('*', '')) + int(summ[2].replace('*', '')) + int(summ[3].replace('*', ''))
@@ -96,7 +96,7 @@ if data[-1][0] == 'DATE':
         writer.writerow([today, total_cases, deaths])
         
 else:
-    if data[-1][0] == today:
+    if data[-1][0] == today or int(today.split('-')[0]) == int(data[-1][0].split('-')[0]):
         data[-1][1] = str(max(int(data[-1][1].replace(',', '')), total_cases))
         data[-1][2] = str(max(int(data[-1][2].replace(',', '')), deaths))
 
