@@ -1,32 +1,32 @@
 S.NO,STATE/UT,TOTAL ACTIVE CASES,DISCHARGED,DEAD,TOTAL CASES
-1,Andhra Pradesh,266,1,3,270
+1,Andhra Pradesh,305,5,4,314
 2,Andaman and Nicobar Islands,10,0,0,10
 3,Arunachal Pradesh,1,0,0,1
-4,Assam,26,0,0,26
-5,Bihar,32,0,1,33
+4,Assam,27,0,0,27
+5,Bihar,38,0,1,39
 6,Chandigarh,18,7,0,25
 7,Chhattisgarh,10,9,0,19
-8,Delhi,576,21,7,604
+8,Delhi,576,21,9,606
 9,Goa,7,0,0,7
 10,Gujarat,165,25,13,203
-11,Haryana,90,25,1,116
-12,Himachal Pradesh,13,2,1,16
+11,Haryana,147,28,3,178
+12,Himachal Pradesh,18,2,1,21
 13,Jammu and Kashmir,116,4,2,122
 14,Jharkhand,4,0,0,4
 15,Karnataka,175,25,4,204
-16,Kerala,327,58,2,387
+16,Kerala,336,70,2,408
 17,Ladakh,14,10,0,24
 18,Madhya Pradesh,229,0,13,242
-19,Maharashtra,868,56,48,972
+19,Maharashtra,1018,79,64,1161
 20,Manipur,2,0,0,2
 21,Mizoram,1,0,0,1
 22,Odisha,42,2,1,45
 23,Puducherry,5,1,0,6
 24,Punjab,91,4,7,102
-25,Rajasthan,288,21,3,312
-26,Tamil Nadu,621,8,5,634
-27,Telengana,364,35,7,406
+25,Rajasthan,328,21,3,352
+26,Tamil Nadu,690,19,7,716
+27,Telengana,427,35,7,469
 28,Tripura,1,0,0,1
 29,Uttarakhand,31,5,0,36
-30,Uttar Pradesh,305,21,3,329
-31,West Bengal,91,13,3,107
+30,Uttar Pradesh,343,26,3,372
+31,West Bengal,99,13,5,117
