@@ -9,6 +9,6 @@ This code also creates Three CSV files to store the day-to-day data.
 
 The above files are then used for Data Analysis - See [COVID-19_Data_Analysis.ipynb](https://github.com/Ram-95/Corona-Tracker/blob/master/COVID-19_Data_Analysis.ipynb)
 
-#### Below is the snapshot of the data showing the detailed information in India (as on March 31st, 2020).
+#### Below is the snapshot of the data showing the detailed information in India (as on 9th April, 2020).
 
 > ![India-result](https://raw.githubusercontent.com/Ram-95/Corona-Tracker/master/india_data.JPG)
