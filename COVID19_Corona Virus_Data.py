@@ -8,11 +8,12 @@ import os
 import Slack_Push_Notification as Slack
 
 filename = 'COVID-19_Global_Data.csv'
+country_filename = 'COVID-19_Country_Data.csv'
 
 today = date.today().strftime("%d-%b-%y")
 
-
-table = PrettyTable(['S.No', 'Country', 'Total Cases', 'New Cases', 'Deaths', 'New Deaths', 'Total Recovered', 'Active Cases', 'Serious/Critical'])
+head = ['S.No', 'Country', 'Total Cases', 'New Cases', 'Deaths', 'New Deaths', 'Total Recovered', 'Active Cases', 'Serious/Critical']
+table = PrettyTable(head)
 
 url= "https://www.worldometers.info/coronavirus/"
 
@@ -23,6 +24,12 @@ soup = bs.BeautifulSoup(html, 'lxml')
 t_items = soup.find('table', id="main_table_countries_today").findAll('tr')
 sno = 0
 india = []
+
+#Writing the country wise information to a file
+with open(country_filename, 'w') as f:
+    writer = csv.writer(f, delimiter= ',', lineterminator= '\n')
+    writer.writerow([x.upper() for x in head])
+
 
 for i in t_items[1:len(t_items)-1]:
     sno += 1
@@ -36,6 +43,11 @@ for i in t_items[1:len(t_items)-1]:
     serious = 0 if i.select_one("td:nth-of-type(8)").text.strip() == '' else i.select_one("td:nth-of-type(8)").text.strip()
 
     table.add_row([sno, country, total_cases, new_cases, deaths, new_deaths, total_recovered, active_cases, serious])
+
+    #Writing the data to the file
+    with open(country_filename, 'a') as f:
+        writer = csv.writer(f, delimiter=',', lineterminator='\n')
+        writer.writerow([sno, country, total_cases, new_cases, deaths, new_deaths, total_recovered, active_cases, serious])
     
     if country == 'India':
         india.append(country)
