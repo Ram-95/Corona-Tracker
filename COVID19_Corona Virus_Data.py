@@ -46,6 +46,7 @@ for i in t_items[1:len(t_items)-1]:
     
     table.add_row(values)
 
+    #Converting the numbers from string to int - Used in Data Analysis
     values[2:] = [int(x.replace(',','')) for x in values[2:]]
 
     #Writing the data to the file
