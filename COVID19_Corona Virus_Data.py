@@ -9,10 +9,12 @@ import Slack_Push_Notification as Slack
 
 filename = 'COVID-19_Global_Data.csv'
 country_filename = 'COVID-19_Country_Data.csv'
+continent_filename = 'COVID-19_Continent_Data.csv'
 
 today = date.today().strftime("%d-%b-%y")
 
 head = ['S.No', 'Country', 'Total Cases', 'New Cases', 'Deaths', 'New Deaths', 'Total Recovered', 'Active Cases', 'Serious/Critical']
+head_continent = ['S.No', 'Continent', 'Total Cases', 'New Cases', 'Deaths', 'New Deaths', 'Total Recovered', 'Active Cases', 'Serious/Critical']
 table = PrettyTable(head)
 
 url= "https://www.worldometers.info/coronavirus/"
@@ -25,13 +27,42 @@ t_items = soup.find('table', id="main_table_countries_today").findAll('tr')
 sno = 0
 india = []
 
+#Writing the data across the Continents to the file
+with open(continent_filename, 'w') as f:
+    writer = csv.writer(f, delimiter= ',', lineterminator= '\n')
+    writer.writerow([x.upper() for x in head_continent])
+
+for i in t_items[1:8]:
+    sno += 1
+    country = i.select_one("td:nth-of-type(1)").text.strip()
+    total_cases =  i.select_one("td:nth-of-type(2)").text.strip()
+    new_cases = '0' if i.select_one("td:nth-of-type(3)").text.strip() == '' else i.select_one("td:nth-of-type(3)").text.strip()
+    deaths = '0' if i.select_one("td:nth-of-type(4)").text.strip() == '' else i.select_one("td:nth-of-type(4)").text.strip()
+    new_deaths = '0' if i.select_one("td:nth-of-type(5)").text.strip() == '' else i.select_one("td:nth-of-type(5)").text.strip()
+    total_recovered = '0' if i.select_one("td:nth-of-type(6)").text.strip() == '' else i.select_one("td:nth-of-type(6)").text.strip()
+    active_cases = '0' if i.select_one("td:nth-of-type(7)").text.strip() == '' else i.select_one("td:nth-of-type(7)").text.strip()
+    serious = '0' if i.select_one("td:nth-of-type(8)").text.strip() == '' else i.select_one("td:nth-of-type(8)").text.strip()
+
+    values = [sno, country, total_cases, new_cases, deaths, new_deaths, total_recovered, active_cases, serious]
+    
+    table.add_row(values)
+
+    #Converting the numbers from string to int - Used in Data Analysis
+    values[2:] = [int(x.replace(',','')) for x in values[2:]]
+
+    #Writing the data to the file
+    with open(continent_filename, 'a') as f:
+        writer = csv.writer(f, delimiter=',', lineterminator='\n')
+        writer.writerow(values)
+
+
+sno = 0
 #Writing the country wise information to a file
 with open(country_filename, 'w') as f:
     writer = csv.writer(f, delimiter= ',', lineterminator= '\n')
     writer.writerow([x.upper() for x in head])
 
-
-for i in t_items[1:len(t_items)-1]:
+for i in t_items[9:len(t_items)-8]:
     sno += 1
     country = i.select_one("td:nth-of-type(1)").text.strip()
     total_cases =  i.select_one("td:nth-of-type(2)").text.strip()
