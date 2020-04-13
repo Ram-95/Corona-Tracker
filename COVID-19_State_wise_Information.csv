@@ -1,32 +1,33 @@
 S.NO,STATE/UT,TOTAL ACTIVE CASES,DISCHARGED,DEAD,TOTAL CASES
-1,Andhra Pradesh,381,11,6,398
+1,Andhra Pradesh,432,11,7,450
 2,Andaman and Nicobar Islands,11,10,0,21
 3,Arunachal Pradesh,1,0,0,1
-4,Assam,29,0,1,30
-5,Bihar,64,19,1,84
-6,Chandigarh,19,7,0,26
-7,Chhattisgarh,25,10,0,35
-8,Delhi,1069,25,19,1113
+4,Assam,31,0,1,32
+5,Bihar,64,26,1,91
+6,Chandigarh,21,7,0,28
+7,Chhattisgarh,31,10,0,41
+8,Delhi,1154,27,24,1205
 9,Goa,7,5,0,12
-10,Gujarat,432,44,22,498
+10,Gujarat,539,47,26,612
 11,Haryana,185,29,3,217
-12,Himachal Pradesh,32,6,1,39
-13,Jammu and Kashmir,224,6,4,234
-14,Jharkhand,17,0,1,18
-15,Karnataka,226,37,6,269
-16,Kerala,374,142,2,518
+12,Himachal Pradesh,32,13,1,46
+13,Jammu and Kashmir,245,6,4,255
+14,Jharkhand,19,0,2,21
+15,Karnataka,247,59,6,312
+16,Kerala,376,179,3,558
 17,Ladakh,15,10,0,25
-18,Madhya Pradesh,564,0,36,600
-19,Maharashtra,1761,208,127,2096
+18,Madhya Pradesh,604,44,43,691
+19,Maharashtra,1985,217,149,2351
 20,Manipur,2,1,0,3
 21,Mizoram,1,0,0,1
-22,Odisha,54,12,1,67
-23,Puducherry,7,1,0,8
-24,Punjab,151,5,11,167
-25,Rajasthan,700,21,3,724
-26,Tamil Nadu,969,44,10,1023
-27,Telengana,504,43,9,556
-28,Tripura,2,0,0,2
-29,Uttarakhand,35,5,0,40
-30,Uttar Pradesh,452,45,5,502
-31,West Bengal,134,19,5,158
+22,Nagaland,1,0,0,1
+23,Odisha,54,12,1,67
+24,Puducherry,7,1,0,8
+25,Punjab,167,14,11,192
+26,Rajasthan,812,21,3,836
+27,Tamil Nadu,1075,50,11,1136
+28,Telengana,562,100,16,678
+29,Tripura,2,0,0,2
+30,Uttarakhand,35,5,0,40
+31,Uttar Pradesh,483,47,5,535
+32,West Bengal,152,29,7,188
