@@ -78,8 +78,8 @@ for i in t_items[9:len(t_items)-8]:
     table.add_row(values)
 
     #Converting the numbers from string to int - Used in Data Analysis
-    try:
-        values[2:] = [int(x.replace(',','')) for x in values[2:]]
+    try:    
+        values[2:] = [int(x.replace(',','')) for x in values[2:] ]
     except ValueError:
         pass
 
@@ -106,7 +106,7 @@ print(f'\n{country} {total_cases}\tDeaths: {deaths}')
 
 
 #Creating the CSV File if not already present
-os.chdir('C:\\Users\\shyam\\AppData\\Local\\Programs\\Python\\Python37-32\\Corona Tracker')
+os.chdir('C:\\Users\\shyam\\AppData\\Local\\Programs\\Python\\Python37-32\\Corona_Tracker')
 files = os.listdir()
 
 if filename not in files:
