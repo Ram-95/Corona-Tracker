@@ -78,10 +78,12 @@ for i in t_items[9:len(t_items)-8]:
     table.add_row(values)
 
     #Converting the numbers from string to int - Used in Data Analysis
-    try:    
+    try:
         values[2:] = [int(x.replace(',','')) for x in values[2:] ]
     except ValueError:
         pass
+    
+    
 
     #Writing the data to the file
     with open(country_filename, 'a') as f:
