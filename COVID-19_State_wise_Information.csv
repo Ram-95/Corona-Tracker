@@ -6,13 +6,13 @@ S.NO,STATE/UT,TOTAL ACTIVE CASES,DISCHARGED,DEAD,TOTAL CASES
 5,Bihar,86,37,2,125
 6,Chandigarh,23,10,0,33
 7,Chhattisgarh,36,24,0,60
-8,Delhi,1893,72,42,2007
+8,Delhi,1893,72,43,2008
 9,Goa,7,6,0,13
-10,Gujarat,1376,93,53,1522
-11,Haryana,225,43,3,271
+10,Gujarat,1604,94,58,1756
+11,Haryana,233,87,3,323
 12,Himachal Pradesh,39,16,1,56
 13,Jammu and Kashmir,341,51,5,397
-14,Jharkhand,34,0,2,36
+14,Jharkhand,35,0,2,37
 15,Karnataka,384,104,14,502
 16,Kerala,400,257,3,660
 17,Ladakh,18,14,0,32
@@ -24,11 +24,11 @@ S.NO,STATE/UT,TOTAL ACTIVE CASES,DISCHARGED,DEAD,TOTAL CASES
 23,Nagaland#,0,0,0,0
 24,Odisha,61,24,1,86
 25,Puducherry,7,3,0,10
-26,Punjab,202,27,13,242
+26,Punjab,219,31,16,266
 27,Rajasthan,1351,183,11,1545
 28,Tamil Nadu,1372,365,15,1752
-29,Telengana,809,186,18,1013
+29,Telengana,844,186,18,1048
 30,Tripura,2,1,0,3
 31,Uttarakhand,42,9,0,51
-32,Uttar Pradesh,969,86,14,1069
+32,Uttar Pradesh,1084,108,17,1209
 32,West Bengal,310,62,12,384
