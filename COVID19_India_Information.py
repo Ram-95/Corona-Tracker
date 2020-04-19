@@ -6,7 +6,7 @@ import os
 from datetime import date
 from prettytable import PrettyTable
 
-os.chdir('C:\\Users\\shyam\\AppData\\Local\\Programs\\Python\\Python37-32\\Corona_Tracker')
+os.chdir('C:\\Users\\home\\AppData\\Local\\Programs\\Python\\Python38-32\\Corona-Tracker\\')
 filename = 'COVID-19_India_Data.csv'
 state_filename = 'COVID-19_State_wise_Information.csv'
 
