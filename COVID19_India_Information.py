@@ -22,12 +22,11 @@ x = soup.find('div', class_= 'status-update').find('span').text.strip()
 
 
 t_items = soup.find('div', class_= 'data-table').find('table').find('tbody').findAll('tr')
-head = ['S.No', 'State/UT', 'Total Active Cases', 'Discharged', 'Dead', 'Total Cases']
-
+head = ['S.No', 'State/UT', 'Total Cases', 'Discharged', 'Dead']
 
 #Creating a Table
 ind_table = PrettyTable(head)
-summ_table = PrettyTable(['Total', 'Total Active Cases', 'Discharged', 'Dead', 'Total Cases'])
+summ_table = PrettyTable(['Total', 'Total Cases', 'Discharged', 'Dead'])
 
 
 #b = soup.findAll('div', class_='iblock_text')
@@ -39,11 +38,10 @@ with open(state_filename, 'w') as f:
     writer.writerow([x.upper() for x in head])
 
 
-for i in t_items[:len(t_items)-2]:
+for i in t_items[:len(t_items)-3]:
     state_data = []
     for k in i.findAll('td'):
         state_data.append(k.text.strip())
-    state_data.append(int(state_data[2]) + int(state_data[3]) + int(state_data[4]))
     ind_table.add_row(state_data)
 
     with open(state_filename, 'a') as f:
@@ -55,11 +53,11 @@ print('\n' + '*'*20 + ' INDIA - STATE WISE INFORMATION (' + x + ') ' + '*'*20 + 
 print(f'{ind_table}')
 
 summ = []
-for j in t_items[-2].findAll('td'):
+for j in t_items[-3].findAll('td'):
     summ.append(j.text.strip())
 
-total_cases = int(summ[1].replace('*', '')) + int(summ[2].replace('*', '')) + int(summ[3].replace('*', ''))
-summ.append(total_cases)
+#total_cases = int(summ[1].replace('*', '')) + int(summ[2].replace('*', '')) + int(summ[3].replace('*', ''))
+#summ.append(total_cases)
 
 summ_table.add_row(summ)
 
@@ -74,7 +72,7 @@ print(f'\nSummary:\n{summ_table}')
 files = os.listdir()
 
 deaths = int(summ[3])
-
+total_cases = summ[1]
 
 if filename not in files:
     with open(filename, 'w') as f:
@@ -97,7 +95,7 @@ if data[-1][0] == 'DATE':
         
 else:
     if data[-1][0] == today or int(today.split('-')[0]) == int(data[-1][0].split('-')[0]):
-        data[-1][1] = str(max(int(data[-1][1].replace(',', '')), total_cases))
+        #data[-1][1] = str(max(int(data[-1][1].replace(',', '')), total_cases))
         data[-1][2] = str(max(int(data[-1][2].replace(',', '')), deaths))
 
         with open(filename, 'w') as f:
