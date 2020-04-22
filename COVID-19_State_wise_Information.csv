@@ -1,34 +1,33 @@
-S.NO,STATE/UT,TOTAL ACTIVE CASES,DISCHARGED,DEAD,TOTAL CASES
-1,Andaman and Nicobar Islands,16,11,0,27
-2,Andhra Pradesh,757,96,22,875
-3,Arunachal Pradesh,1,1,0,2
-4,Assam,35,19,1,55
-5,Bihar,114,42,2,158
-6,Chandigarh,26,13,0,39
-7,Chhattisgarh,36,25,0,61
-8,Delhi,2081,431,47,2559
-9,Goa,7,7,0,14
-10,Gujarat,2066,131,77,2274
-11,Haryana,254,127,3,384
-12,Himachal Pradesh,39,16,1,56
-13,Jammu and Kashmir,368,71,5,444
-14,Jharkhand,46,0,2,48
-15,Karnataka,415,114,17,546
-16,Kerala,408,291,3,702
-17,Ladakh,18,14,0,32
-18,Madhya Pradesh,1540,127,76,1743
-19,Maharashtra,4669,572,232,5473
-20,Manipur,2,2,0,4
-21,Meghalaya,11,0,1,12
-22,Mizoram,1,0,0,1
-23,Nagaland,0,0,0,0
-24,Odisha,74,24,1,99
-25,Puducherry,7,3,0,10
-26,Punjab,245,39,16,300
-27,Rajasthan,1576,205,25,1806
-28,Tamil Nadu,1520,457,17,1994
-29,Telengana,919,190,23,1132
-30,Tripura,2,1,0,3
-31,Uttarakhand,46,18,0,64
-32,Uttar Pradesh,1294,140,20,1454
-33,West Bengal,392,73,12,477
+S.NO,STATE/UT,TOTAL CASES,DISCHARGED,DEAD
+1,Andaman and Nicobar Islands,17,11,0
+2,Andhra Pradesh,813,120,24
+3,Arunachal Pradesh,1,1,0
+4,Assam,35,19,1
+5,Bihar,126,46,2
+6,Chandigarh,27,14,0
+7,Chhattisgarh,36,26,0
+8,Delhi,2156,611,47
+9,Goa,7,7,0
+10,Gujarat,2272,144,95
+11,Haryana,254,127,3
+12,Himachal Pradesh,39,16,1
+13,Jammu and Kashmir,380,81,5
+14,Jharkhand#,45,0,3
+15,Karnataka,425,129,17
+16,Kerala,427,323,3
+17,Ladakh,18,14,0
+18,Madhya Pradesh,1592,148,80
+19,Maharashtra,5221,722,251
+20,Manipur,2,2,0
+21,Meghalaya,12,0,1
+22,Mizoram,1,0,0
+23,Odisha,82,30,1
+24,Puducherry,7,3,0
+25,Punjab,251,49,16
+26,Rajasthan,1801,230,25
+27,Tamil Nadu,1596,635,18
+28,Telengana,945,194,23
+29,Tripura,2,1,0
+30,Uttarakhand,46,19,0
+31,Uttar Pradesh,1412,165,21
+32,West Bengal,423,73,15
