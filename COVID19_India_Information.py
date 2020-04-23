@@ -72,7 +72,7 @@ print(f'\nSummary:\n{summ_table}')
 files = os.listdir()
 
 deaths = int(summ[3])
-total_cases = summ[1]
+total_cases = int(str(summ[1]).replace('*', ''))
 
 if filename not in files:
     with open(filename, 'w') as f:
