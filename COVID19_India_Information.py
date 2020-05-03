@@ -38,7 +38,7 @@ with open(state_filename, 'w') as f:
     writer.writerow([x.upper() for x in head])
 
 
-for i in t_items[:len(t_items)-3]:
+for i in t_items[:len(t_items)-4]:
     state_data = []
     for k in i.findAll('td'):
         state_data.append(k.text.strip())
@@ -53,7 +53,7 @@ print('\n' + '*'*20 + ' INDIA - STATE WISE INFORMATION (' + x + ') ' + '*'*20 + 
 print(f'{ind_table}')
 
 summ = []
-for j in t_items[-3].findAll('td'):
+for j in t_items[-4].findAll('td'):
     summ.append(j.text.strip())
 
 #total_cases = int(summ[1].replace('*', '')) + int(summ[2].replace('*', '')) + int(summ[3].replace('*', ''))
