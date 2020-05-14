@@ -29,40 +29,38 @@ ind_table = PrettyTable(head)
 summ_table = PrettyTable(['Total', 'Total Cases', 'Discharged', 'Dead'])
 
 
-#b = soup.findAll('div', class_='iblock_text')
-#india_total = b[1].find('div').text.strip() + '(considering only Indian Citizens) = ' + b[1].find('span').text
-
 #Writing the state wise information to a file
 with open(state_filename, 'w') as f:
     writer = csv.writer(f, delimiter= ',', lineterminator= '\n')
     writer.writerow([x.upper() for x in head])
 
-
-for i in t_items[:len(t_items)-3]:
+#To count the rows until span is found in the <td> tag.
+item = 0
+for i in t_items:
     state_data = []
-    for k in i.findAll('td'):
-        state_data.append(k.text.strip())
-    ind_table.add_row(state_data)
+    #Stop when span is present in the table row. Because total number of cases are present inside span tag.
+    if i.find('span') is None:
+        for k in i.findAll('td'):
+            state_data.append(k.text.strip())
+        ind_table.add_row(state_data)
 
-    with open(state_filename, 'a') as f:
-        writer = csv.writer(f, delimiter=',', lineterminator='\n')
-        writer.writerow(state_data)
+        with open(state_filename, 'a') as f:
+            writer = csv.writer(f, delimiter=',', lineterminator='\n')
+            writer.writerow(state_data)
+        item += 1
+    else:
+        break
 
 
 print('\n' + '*'*20 + ' INDIA - STATE WISE INFORMATION (' + x + ') ' + '*'*20 + '\n')
 print(f'{ind_table}')
 
 summ = []
-for j in t_items[-3].findAll('td'):
+for j in t_items[item].findAll('td'):
     summ.append(j.text.strip())
-
-#total_cases = int(summ[1].replace('*', '')) + int(summ[2].replace('*', '')) + int(summ[3].replace('*', ''))
-#summ.append(total_cases)
-
 summ_table.add_row(summ)
 
 print(f'\nSummary:\n{summ_table}')
-#print(f'\n[OFFICIAL DATA] - {india_total}\n')
 
 
 
@@ -72,7 +70,7 @@ print(f'\nSummary:\n{summ_table}')
 files = os.listdir()
 
 deaths = int(summ[3])
-total_cases = int(str(summ[1]).replace('*', ''))
+total_cases = int(str(summ[1]).replace('#', ''))
 
 if filename not in files:
     with open(filename, 'w') as f:
