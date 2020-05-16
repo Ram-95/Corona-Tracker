@@ -48,7 +48,7 @@ for i in t_items[1:8]:
     table.add_row(values)
 
     #Converting the numbers from string to int - Used in Data Analysis
-    values[2:] = [int(x.replace(',','')) for x in values[2:]]
+    values[3:] = [int(x.replace(',','')) for x in values[3:]]
 
     #Writing the data to the file
     with open(continent_filename, 'a') as f:
@@ -64,14 +64,14 @@ with open(country_filename, 'w') as f:
 
 for i in t_items[9:len(t_items)-8]:
     sno += 1
-    country = i.select_one("td:nth-of-type(1)").text.strip()
-    total_cases =  i.select_one("td:nth-of-type(2)").text.strip()
-    new_cases = '0' if i.select_one("td:nth-of-type(3)").text.strip() == '' else i.select_one("td:nth-of-type(3)").text.strip()
-    deaths = '0' if i.select_one("td:nth-of-type(4)").text.strip() == '' else i.select_one("td:nth-of-type(4)").text.strip()
-    new_deaths = '0' if i.select_one("td:nth-of-type(5)").text.strip() == '' else i.select_one("td:nth-of-type(5)").text.strip()
-    total_recovered = '0' if i.select_one("td:nth-of-type(6)").text.strip() == '' else i.select_one("td:nth-of-type(6)").text.strip()
-    active_cases = '0' if i.select_one("td:nth-of-type(7)").text.strip() == '' else i.select_one("td:nth-of-type(7)").text.strip()
-    serious = '0' if i.select_one("td:nth-of-type(8)").text.strip() == '' else i.select_one("td:nth-of-type(8)").text.strip()
+    country = i.select_one("td:nth-of-type(2)").text.strip()
+    total_cases =  i.select_one("td:nth-of-type(3)").text.strip()
+    new_cases = '0' if i.select_one("td:nth-of-type(4)").text.strip() == '' else i.select_one("td:nth-of-type(4)").text.strip()
+    deaths = '0' if i.select_one("td:nth-of-type(5)").text.strip() == '' else i.select_one("td:nth-of-type(5)").text.strip()
+    new_deaths = '0' if i.select_one("td:nth-of-type(6)").text.strip() == '' else i.select_one("td:nth-of-type(6)").text.strip()
+    total_recovered = '0' if i.select_one("td:nth-of-type(7)").text.strip() == '' else i.select_one("td:nth-of-type(7)").text.strip()
+    active_cases = '0' if i.select_one("td:nth-of-type(8)").text.strip() == '' else i.select_one("td:nth-of-type(8)").text.strip()
+    serious = '0' if i.select_one("td:nth-of-type(9)").text.strip() == '' else i.select_one("td:nth-of-type(9)").text.strip()
 
     values = [sno, country, total_cases, new_cases, deaths, new_deaths, total_recovered, active_cases, serious]
     
@@ -98,10 +98,10 @@ for i in t_items[9:len(t_items)-8]:
         
 
 #Information about India
-country = t_items[-1].select_one("td:nth-of-type(1)").text.strip()
-total_cases =  t_items[-1].select_one("td:nth-of-type(2)").text.strip()
-deaths = t_items[-1].select_one("td:nth-of-type(4)").text.strip()
-new_cases = t_items[-1].select_one("td:nth-of-type(3)").text.strip()
+country = t_items[-1].select_one("td:nth-of-type(2)").text.strip()
+total_cases =  t_items[-1].select_one("td:nth-of-type(3)").text.strip()
+deaths = t_items[-1].select_one("td:nth-of-type(5)").text.strip()
+new_cases = t_items[-1].select_one("td:nth-of-type(4)").text.strip()
 
 print(table)
 print(f'\n{country} {total_cases}\tDeaths: {deaths}')
