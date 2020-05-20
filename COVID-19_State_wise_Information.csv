@@ -1,35 +1,35 @@
 S.NO,STATE/UT,TOTAL CASES,DISCHARGED,DEAD
 1,Andaman and Nicobar Islands,33,33,0
-2,Andhra Pradesh,2407,1456,50
+2,Andhra Pradesh,2532,1621,52
 3,Arunachal Pradesh,1,1,0
-4,Assam,101,41,2
-5,Bihar,1262,475,8
-6,Chandigarh,191,51,3
-7,Chhattisgarh,86,59,0
+4,Assam,142,41,4
+5,Bihar,1498,534,9
+6,Chandigarh,200,57,3
+7,Chhattisgarh,101,59,0
 8,Dadar Nagar Haveli,1,0,0
-9,Delhi,10054,4485,160
-10,Goa,29,7,0
-11,Gujarat,11379,4499,659
-12,Haryana,910,562,14
-13,Himachal Pradesh,80,44,3
-14,Jammu and Kashmir,1183,575,13
-15,Jharkhand,223,113,3
-16,Karnataka,1147,509,37
-17,Kerala,601,497,4
-18,Ladakh,43,24,0
-19,Madhya Pradesh,4977,2403,248
-20,Maharashtra,33053,7688,1198
-21,Manipur,7,2,0
-22,Meghalaya,13,11,1
+9,Delhi,10554,4750,168
+10,Goa,46,7,0
+11,Gujarat,12140,5043,719
+12,Haryana,964,627,14
+13,Himachal Pradesh,92,47,3
+14,Jammu and Kashmir,1317,653,17
+15,Jharkhand,231,127,3
+16,Karnataka,1397,544,40
+17,Kerala,642,497,4
+18,Ladakh,43,43,0
+19,Madhya Pradesh,5465,2630,258
+20,Maharashtra,37136,9639,1325
+21,Manipur,9,2,0
+22,Meghalaya,13,12,1
 23,Mizoram,1,1,0
-24,Odisha,828,220,4
-25,Puducherry,13,9,1
-26,Punjab,1964,1366,35
-27,Rajasthan,5202,2992,131
-28,Tamil Nadu,11224,4172,78
-29,Telengana,1551,992,34
-30,Tripura,167,85,0
-31,Uttarakhand,92,52,1
-32,Uttar Pradesh,4259,2441,104
-33,West Bengal,2677,959,238
-,Cases being reassigned to states,410,,
+24,Odisha,978,277,5
+25,Puducherry,18,9,1
+26,Punjab,2002,1642,38
+27,Rajasthan,5845,3337,143
+28,Tamil Nadu,12448,4895,84
+29,Telengana,1634,1010,38
+30,Tripura,173,116,0
+31,Uttarakhand,111,52,1
+32,Uttar Pradesh,4926,2918,123
+33,West Bengal,2961,1074,250
+,Cases being reassigned to states,1096,,
