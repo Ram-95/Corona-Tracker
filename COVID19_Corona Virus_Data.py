@@ -75,14 +75,28 @@ for i in t_items[9:len(t_items)-8]:
 
     values = [sno, country, total_cases, new_cases, deaths, new_deaths, total_recovered, active_cases, serious]
     
-    table.add_row(values)
+    
 
     #Converting the numbers from string to int - Used in Data Analysis
     try:
-        values[2:] = [int(x.replace(',','')) for x in values[2:] ]
+        if values[1] != 'UK':
+            values[2:] = [int(x.replace(',','')) for x in values[2:]]
+        else:
+            #This code is to handle data for 'UK' - To Convert N/A to 0.
+            for i in range(2, len(values)):
+                if ',' in values[i]:
+                    values[i] = int(values[i].replace(',', ''))
+                elif values[i] == 'N/A':
+                    values[i] = 0
+                else:
+                    values[i] = int(values[i])
+            #print(values)
+                    
     except ValueError:
         pass
-    
+
+    #Storing the data to the Table(PrettyTable)
+    table.add_row(values)
     
 
     #Writing the data to the file
@@ -95,6 +109,7 @@ for i in t_items[9:len(t_items)-8]:
         india.append(total_cases)
         india.append(new_cases)
         india.append(deaths)
+    
         
 
 #Information about India
