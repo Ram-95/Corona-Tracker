@@ -58,6 +58,7 @@ print(f'{ind_table}')
 summ = []
 for j in t_items[item].findAll('td'):
     summ.append(j.text.strip())
+del summ[0]
 summ_table.add_row(summ)
 
 print(f'\nSummary:\n{summ_table}')
