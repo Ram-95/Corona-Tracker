@@ -90,6 +90,10 @@ for i in t_items[9:len(t_items)-8]:
                     values[i] = 0
                 else:
                     values[i] = int(values[i])
+
+            #Calculating the Active Cases in UK (as they are not given in the website)
+            #Active Cases = Total_cases - (Deaths + Recovered)
+            values[7] = values[2] - (values[4] + values[6]) if values[7] == 0 else values[7]
             #print(values)
                     
     except ValueError:
