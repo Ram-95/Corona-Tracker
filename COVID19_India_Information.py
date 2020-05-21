@@ -42,17 +42,19 @@ for i in t_items:
     if i.find('span') is None:
         for k in i.findAll('td'):
             state_data.append(k.text.strip())
-        ind_table.add_row(state_data)
+        if state_data[1] != "Cases being reassigned to states":
+            ind_table.add_row(state_data)
 
         with open(state_filename, 'a') as f:
             writer = csv.writer(f, delimiter=',', lineterminator='\n')
-            writer.writerow(state_data)
+            if state_data[1] != "Cases being reassigned to states":
+                writer.writerow(state_data)
         item += 1
     else:
         break
 
 
-print('\n' + '*'*20 + ' INDIA - STATE WISE INFORMATION (' + x + ') ' + '*'*20 + '\n')
+print('\n' + '*'*20 + ' INDIA - STATE WISE INFORMATION (' + x + ') ' + '*'*20)
 print(f'{ind_table}')
 
 summ = []
@@ -61,7 +63,7 @@ for j in t_items[item].findAll('td'):
 del summ[0]
 summ_table.add_row(summ)
 
-print(f'\nSummary:\n{summ_table}')
+print(f'Summary:\n{summ_table}')
 
 
 
