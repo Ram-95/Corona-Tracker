@@ -127,7 +127,7 @@ print(f'\n{country} {total_cases}\tDeaths: {deaths}')
 
 
 #Creating the CSV File if not already present
-os.chdir('C:\\Users\\home\\AppData\\Local\\Programs\\Python\\Python38-32\\Corona-Tracker\\')
+os.chdir('C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python38\\Corona-Tracker\\')
 files = os.listdir()
 
 if filename not in files:

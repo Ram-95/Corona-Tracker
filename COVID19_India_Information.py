@@ -6,7 +6,7 @@ import os
 from datetime import date
 from prettytable import PrettyTable
 
-os.chdir('C:\\Users\\home\\AppData\\Local\\Programs\\Python\\Python38-32\\Corona-Tracker\\')
+os.chdir('C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python38\\Corona-Tracker\\')
 filename = 'COVID-19_India_Data.csv'
 state_filename = 'COVID-19_State_wise_Information.csv'
 
@@ -22,11 +22,11 @@ x = soup.find('div', class_= 'status-update').find('span').text.strip()
 
 
 t_items = soup.find('div', class_= 'data-table').find('table').find('tbody').findAll('tr')
-head = ['S.No', 'State/UT', 'Total Cases', 'Discharged', 'Dead']
+head = ['S.No', 'State/UT', 'Active Cases', 'Discharged', 'Dead', 'Total Cases']
 
 #Creating a Table
 ind_table = PrettyTable(head)
-summ_table = PrettyTable(['Total', 'Total Cases', 'Discharged', 'Dead'])
+summ_table = PrettyTable(['Total', 'Active Cases', 'Discharged', 'Dead', 'Total Cases'])
 
 
 #Writing the state wise information to a file
@@ -73,7 +73,7 @@ print(f'Summary:\n{summ_table}')
 files = os.listdir()
 
 deaths = int(summ[3])
-total_cases = int(str(summ[1]).replace('#', ''))
+total_cases = int(str(summ[4]).replace('#', ''))
 
 if filename not in files:
     with open(filename, 'w') as f:
@@ -96,7 +96,7 @@ if data[-1][0] == 'DATE':
         
 else:
     if data[-1][0] == today or int(today.split('-')[0]) == int(data[-1][0].split('-')[0]):
-        #data[-1][1] = str(max(int(data[-1][1].replace(',', '')), total_cases))
+        data[-1][1] = str(max(int(data[-1][1].replace(',', '')), total_cases))
         data[-1][2] = str(max(int(data[-1][2].replace(',', '')), deaths))
 
         with open(filename, 'w') as f:
