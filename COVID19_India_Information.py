@@ -108,4 +108,9 @@ else:
             writer = csv.writer(f, delimiter = ',', lineterminator = '\n')
             writer.writerow([today, total_cases, deaths])
 
-
+ch = input('\n\nDo you want to know Telangana\'s COVID-19 Information ?(y/n): \n')
+if ch.lower() == 'y':
+    try:
+        import COVID19_State_Data as COVID_TS
+    except Exception as e:
+        print(f'{e}')

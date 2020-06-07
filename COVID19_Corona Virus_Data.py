@@ -1,4 +1,4 @@
-#Worldometers Data
+#Worldometers Data - Global Information
 import csv
 import requests
 import bs4 as bs
