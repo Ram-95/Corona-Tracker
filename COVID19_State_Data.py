@@ -26,7 +26,8 @@ deaths = today.get('deaths', None)
 state_summ = PrettyTable(['Total', 'Active', 'Recovered', 'Deaths'])
 state_summ.add_row([total, active, recovered, deaths])
 
-print(f'******************** TELANGANA CASES (as on {date}) ********************')
+heading = f' TELANGANA CASES (as on {date}) '.center(120, '*')
+print(heading)
 print(state_summ)
 
 #Sending SLACK Notification
