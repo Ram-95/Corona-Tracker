@@ -70,8 +70,8 @@ for i in t_items[9:len(t_items)-8]:
     deaths = '0' if i.select_one("td:nth-of-type(5)").text.strip() in ('','N/A') else i.select_one("td:nth-of-type(5)").text.strip()
     new_deaths = '0' if i.select_one("td:nth-of-type(6)").text.strip() in ('','N/A') else i.select_one("td:nth-of-type(6)").text.strip()
     total_recovered = '0' if i.select_one("td:nth-of-type(7)").text.strip() in ('','N/A') else i.select_one("td:nth-of-type(7)").text.strip()
-    active_cases = '0' if i.select_one("td:nth-of-type(8)").text.strip() in ('','N/A') else i.select_one("td:nth-of-type(8)").text.strip()
-    serious = '0' if i.select_one("td:nth-of-type(9)").text.strip() in ('','N/A') else i.select_one("td:nth-of-type(9)").text.strip()
+    active_cases = '0' if i.select_one("td:nth-of-type(9)").text.strip() in ('','N/A') else i.select_one("td:nth-of-type(9)").text.strip()
+    serious = '0' if i.select_one("td:nth-of-type(10)").text.strip() in ('','N/A') else i.select_one("td:nth-of-type(10)").text.strip()
 
     values = [sno, country, total_cases, new_cases, deaths, new_deaths, total_recovered, active_cases, serious]
     
