@@ -1,6 +1,7 @@
 '''Using the COVID-19 India API - https://api.covid19india.org/v3/min/data.min.json and fetching the required Data.'''
-
+import os
 import bs4 as bs
+import csv
 import requests
 import json
 from prettytable import PrettyTable
@@ -14,9 +15,9 @@ state_code = {'AN': 'Andaman and Nicobar', 'AP': 'Andhra Pradesh', 'AR': 'Arunac
               'MZ': 'Mizoram', 'NL': 'Nagaland', 'OR': 'Odisha', 'PB': 'Punjab', 'PY': 'Puducherry', 'RJ': 'Rajasthan', 'SK': 'Sikkim',
               'TG': 'Telangana', 'TN': 'Tamil Nadu', 'TR': 'Tripura', 'UN': 'UnAssigned', 'UP': 'Uttar Pradesh', 'UT': 'Uttarakhand', 'WB': 'West Bengal'}
 
+
 #COVID-19 API - Has all India's Data
 url = "https://api.covid19india.org/v3/min/data.min.json"
-
 r = requests.get(url).text
 
 #This Dictionary stores the data of all the dates till now as
@@ -26,9 +27,22 @@ d = json.loads(r)
 head = ['District', 'Total', 'Active', 'Recovered', 'Deceased']
 dist_table = PrettyTable(head)
 
-#State Code
-state = 'TG'
-state_data = d[state]
+try:
+    #State Code
+    state = 'MH'
+    state_data = d[state]
+except:
+    print(f'No State Found with this Code')
+
+#CSV Filename and Path
+os.chdir('C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python38\\Corona-Tracker\\')
+dist_filename = f'COVID-19_{state_code[state]}_Districts_Data.csv'
+
+#Writing the Header to the file
+with open(dist_filename, 'w') as f:
+    writer = csv.writer(f, delimiter=',', lineterminator='\n')
+    writer.writerow([x.upper() for x in head])
+
 #State Timestamp - Denotes the time of Updation
 state_ts = state_data['meta']['last_updated'].split('T')[0] + ' ' + state_data['meta']['last_updated'].split('T')[1][:5] + ' IST'
 
@@ -41,16 +55,19 @@ summ_head = ['Total', 'Active', 'Recovered', 'Deaths', 'Testing Done']
 summ_table = PrettyTable(summ_head)
 
 '''Extracting District wise Data of a State'''
-for i in d.get(state, 'Not Found').get('districts', 'Not Found'):
-    for j in d[state]['districts'][i]['total']:
-        confirmed = int(d[state]['districts'][i]['total'].get('confirmed', 0))
-        recovered = int(d[state]['districts'][i]['total'].get('recovered', 0))
-        deceased = int(d[state]['districts'][i]['total'].get('deceased', 0))
+with open(dist_filename, 'a') as f:
+    writer = csv.writer(f, delimiter=",", lineterminator="\n")
+    for i in d.get(state, 'Not Found').get('districts', 'Not Found'):
+        for j in d[state]['districts'][i]['total']:
+            confirmed = int(d[state]['districts'][i]['total'].get('confirmed', 0))
+            recovered = int(d[state]['districts'][i]['total'].get('recovered', 0))
+            deceased = int(d[state]['districts'][i]['total'].get('deceased', 0))
 
-        active = confirmed - (recovered + deceased)
+            active = confirmed - (recovered + deceased)
         
-    #Adding the data to the Table
-    dist_table.add_row([i, confirmed, active, recovered, deceased])
+        #Adding the data to the Table
+        dist_table.add_row([i, confirmed, active, recovered, deceased])
+        writer.writerow([i, confirmed, active, recovered, deceased])
 
 '''Extracting State's Data.'''
 confirmed = str(state_data['total'].get('confirmed', 0)) + '(+' + str(state_data.get['delta'].get('confirmed', 0)) + ')' if 'delta' in state_data else state_data['total'].get('confirmed', 0)
