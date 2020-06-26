@@ -12,7 +12,7 @@ url = "https://api.covid19india.org/v3/min/data.min.json"
 r = requests.get(url).text
 
 #Slack Notification ON - 1; OFF - 0
-slack_notify = 0
+slack_notify = 1
 
 #This Dictionary stores the data of all the dates till now as
 d = json.loads(r)
@@ -172,3 +172,4 @@ def getStateData(state):
 
 #Driver Code - Pass the State Code as the argument.
 getStateData('TG')
+getIndiaData()
