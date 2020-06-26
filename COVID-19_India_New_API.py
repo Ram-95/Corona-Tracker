@@ -70,17 +70,18 @@ def getIndiaData():
                        f'{round((deceased/confirmed)*100,2)}%',
                        f'{round((confirmed/tested)*100,2)}%'])
     
-    #Sending SLACK Notification - Country's Data
-    india_msg = f"***** INDIA Cases ******\nDate: {country_ts}\nTotal: {confirmed}\nActive: {active}\nRecovered: {recovered}\nTests Done: {tested}\nDeaths: {deceased}"
-    if slack_notify:
-        Slack.slack_message(india_msg, __file__)
-
+    
     print(f'{ind_state_table}\n')
     print(f' India Cases Summary (as on {country_ts}) '.center(70,'*'))
     print(f'{ind_table}\n')
     print(f' India Statistics '.center(60,'*'))
     
     print(ind_stats)
+
+    #Sending SLACK Notification - Country's Data
+    india_msg = f"***** INDIA Cases ******\nDate: {country_ts}\nTotal: {confirmed}\nActive: {active}\nRecovered: {recovered}\nTests Done: {tested}\nDeaths: {deceased}"
+    if slack_notify:
+        Slack.slack_message(india_msg, __file__)
 
 
 def getStateData(state):
@@ -125,6 +126,7 @@ def getStateData(state):
                     deceased = int(d[state]['districts'][i]['total'].get('deceased', 0))
 
                     active = confirmed - (recovered + deceased)
+                    active = -1 * active if active < 0 else active
                 
                 #Adding the data to the Table
                 dist_table.add_row([i, confirmed, active, recovered, deceased])
