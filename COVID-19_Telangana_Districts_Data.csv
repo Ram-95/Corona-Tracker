@@ -1,37 +1,37 @@
 DISTRICT,TOTAL,ACTIVE,RECOVERED,DECEASED
-Adilabad,36,21,15,0
-Bhadradri Kothagudem,12,8,4,0
+Adilabad,45,30,15,0
+Bhadradri Kothagudem,19,15,4,0
 Foreign Evacuees,33,33,0,0
-Hyderabad,8333,8005,305,23
-Jagtial,18,16,2,0
-Jangaon,76,75,1,0
-Jayashankar Bhupalapally,6,6,0,0
-Jogulamba Gadwal,47,21,25,1
-Kamareddy,34,26,8,0
-Karimnagar,79,63,16,0
-Khammam,30,27,3,0
-Komaram Bheem,22,20,2,0
-Mahabubabad,12,11,1,0
-Mahabubnagar,58,50,8,0
-Mancherial,25,24,0,1
-Medak,46,42,4,0
-Medchal Malkajgiri,415,405,9,1
-Mulugu,14,12,2,0
-Nagarkurnool,13,11,2,0
-Nalgonda,37,25,12,0
+Hyderabad,10811,10483,305,23
+Jagtial,20,18,2,0
+Jangaon,81,80,1,0
+Jayashankar Bhupalapally,9,9,0,0
+Jogulamba Gadwal,49,23,25,1
+Kamareddy,39,31,8,0
+Karimnagar,87,71,16,0
+Khammam,37,34,3,0
+Komaram Bheem,23,21,2,0
+Mahabubabad,13,12,1,0
+Mahabubnagar,65,57,8,0
+Mancherial,59,58,0,1
+Medak,56,52,4,0
+Medchal Malkajgiri,534,524,9,1
+Mulugu,16,14,2,0
+Nagarkurnool,23,21,2,0
+Nalgonda,76,64,12,0
 Narayanpet,3,2,0,1
 Nirmal,26,13,13,0
-Nizamabad,78,48,30,0
+Nizamabad,85,55,30,0
 Other State,250,250,0,0
 Peddapalli,6,5,1,0
-Rajanna Sircilla,15,13,2,0
-Ranga Reddy,813,794,17,2
-Sangareddy,94,88,6,0
-Siddipet,12,11,1,0
-Suryapet,89,65,24,0
-Unknown,456,3881,4137,200
-Vikarabad,45,29,15,1
-Wanaparthy,5,5,0,0
-Warangal Rural,35,35,0,0
-Warangal Urban,76,53,23,0
-Yadadri Bhuvanagiri,15,15,0,0
+Rajanna Sircilla,24,22,2,0
+Ranga Reddy,1020,1001,17,2
+Sangareddy,106,100,6,0
+Siddipet,20,19,1,0
+Suryapet,90,66,24,0
+Unknown,456,4382,4621,217
+Vikarabad,46,30,15,1
+Wanaparthy,6,6,0,0
+Warangal Rural,54,54,0,0
+Warangal Urban,115,92,23,0
+Yadadri Bhuvanagiri,17,17,0,0
