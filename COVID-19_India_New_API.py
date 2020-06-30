@@ -31,7 +31,7 @@ def getIndiaData():
     '''Prints the statewise details of Corona Cases across India.'''
     head = ['State/UT', 'Total', 'Active', 'Recovered', 'Deceased', 'Tests Done']
     ind_state_table = PrettyTable(head)
-    ind_stats = PrettyTable(['Recovery', 'Deaths', 'Affected'])
+    ind_stats = PrettyTable(['Recovery', 'Deaths', 'Positivity Rate'])
     summ_head = ['Total', 'Active', 'Recovered', 'Deaths', 'Testing Done']
 
     country_data = d['TT']
@@ -114,7 +114,7 @@ def getStateData(state):
         summ_table = PrettyTable(summ_head)
 
         #Table that shows the Percentages of categories
-        state_stats = PrettyTable(['Recovery', 'Deaths', 'Affected'])
+        state_stats = PrettyTable(['Recovery', 'Deaths', 'Positivity Rate'])
 
         '''Extracting District wise Data of a State'''
         with open(state_filename, 'a') as f:
