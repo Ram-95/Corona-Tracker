@@ -1,37 +1,37 @@
 DISTRICT,TOTAL,ACTIVE,RECOVERED,DECEASED
-Adilabad,53,38,15,0
+Adilabad,75,60,15,0
 Bhadradri Kothagudem,74,70,4,0
 Foreign Evacuees,33,33,0,0
-Hyderabad,24276,23948,305,23
-Jagtial,44,42,2,0
-Jangaon,89,88,1,0
+Hyderabad,25774,25446,305,23
+Jagtial,46,44,2,0
+Jangaon,94,93,1,0
 Jayashankar Bhupalapally,25,25,0,0
-Jogulamba Gadwal,63,37,25,1
-Kamareddy,64,56,8,0
-Karimnagar,212,196,16,0
-Khammam,112,109,3,0
-Komaram Bheem,27,25,2,0
-Mahabubabad,53,52,1,0
-Mahabubnagar,147,139,8,0
-Mancherial,88,87,0,1
-Medak,120,116,4,0
-Medchal Malkajgiri,1200,1190,9,1
+Jogulamba Gadwal,70,44,25,1
+Kamareddy,87,79,8,0
+Karimnagar,245,229,16,0
+Khammam,132,129,3,0
+Komaram Bheem,29,27,2,0
+Mahabubabad,59,58,1,0
+Mahabubnagar,173,165,8,0
+Mancherial,110,109,0,1
+Medak,158,154,4,0
+Medchal Malkajgiri,1386,1376,9,1
 Mulugu,36,34,2,0
 Nagarkurnool,30,28,2,0
-Nalgonda,201,189,12,0
-Narayanpet,8,7,0,1
-Nirmal,39,26,13,0
-Nizamabad,182,152,30,0
+Nalgonda,245,233,12,0
+Narayanpet,22,21,0,1
+Nirmal,42,29,13,0
+Nizamabad,202,172,30,0
 Other State,250,250,0,0
-Peddapalli,25,24,1,0
-Rajanna Sircilla,63,61,2,0
-Ranga Reddy,1960,1941,17,2
-Sangareddy,308,302,6,0
-Siddipet,37,36,1,0
-Suryapet,152,128,24,0
-Unknown,456,17486,17641,301
-Vikarabad,78,62,15,1
-Wanaparthy,27,27,0,0
-Warangal Rural,159,159,0,0
-Warangal Urban,223,200,23,0
-Yadadri Bhuvanagiri,32,32,0,0
+Peddapalli,43,42,1,0
+Rajanna Sircilla,94,92,2,0
+Ranga Reddy,2256,2237,17,2
+Sangareddy,357,351,6,0
+Siddipet,50,49,1,0
+Suryapet,173,149,24,0
+Unknown,456,20230,20368,318
+Vikarabad,87,71,15,1
+Wanaparthy,30,30,0,0
+Warangal Rural,169,169,0,0
+Warangal Urban,248,225,23,0
+Yadadri Bhuvanagiri,42,42,0,0
