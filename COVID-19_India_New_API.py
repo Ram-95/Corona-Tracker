@@ -28,60 +28,63 @@ state_code = {'AN': 'Andaman and Nicobar', 'AP': 'Andhra Pradesh', 'AR': 'Arunac
 
 
 def getIndiaData():
-    '''Prints the statewise details of Corona Cases across India.'''
-    head = ['State/UT', 'Total', 'Active', 'Recovered', 'Deceased', 'Tests Done']
-    ind_state_table = PrettyTable(head)
-    ind_stats = PrettyTable(['Recovery', 'Deaths', 'Positivity Rate'])
-    summ_head = ['Total', 'Active', 'Recovered', 'Deaths', 'Testing Done']
+    try:
+        '''Prints the statewise details of Corona Cases across India.'''
+        head = ['State/UT', 'Total', 'Active', 'Recovered', 'Deceased', 'Tests Done']
+        ind_state_table = PrettyTable(head)
+        ind_stats = PrettyTable(['Recovery', 'Deaths', 'Positivity Rate'])
+        summ_head = ['Total', 'Active', 'Recovered', 'Deaths', 'Testing Done']
 
-    country_data = d['TT']
-    #Country's Timestamp - Denotes the time of Updation of Data
-    country_ts = country_data['meta']['last_updated'].split('T')[0] + ' ' + country_data['meta']['last_updated'].split('T')[1][:5] + ' IST'
+        country_data = d['TT']
+        #Country's Timestamp - Denotes the time of Updation of Data
+        country_ts = country_data['meta']['last_updated'].split('T')[0] + ' ' + country_data['meta']['last_updated'].split('T')[1][:5] + ' IST'
 
 
-    for i in state_code:
-        if 'total' in d[i]:
-            confirmed = d[i]['total'].get('confirmed', 0)
-            deceased = d[i]['total'].get('deceased', 0)
-            recovered = d[i]['total'].get('recovered', 0)
-            tested = d[i]['total'].get('tested', 0)
+        for i in state_code:
+            if 'total' in d[i]:
+                confirmed = d[i]['total'].get('confirmed', 0)
+                deceased = d[i]['total'].get('deceased', 0)
+                recovered = d[i]['total'].get('recovered', 0)
+                tested = d[i]['total'].get('tested', 0)
 
-            active = confirmed - (deceased + recovered)
+                active = confirmed - (deceased + recovered)
 
-            ind_state_table.add_row([state_code[i], confirmed, active, recovered, deceased, tested])
-        else:
-            continue
+                ind_state_table.add_row([state_code[i], confirmed, active, recovered, deceased, tested])
+            else:
+                continue
 
-    '''Extracting India Data.'''
-    ind_table = PrettyTable(summ_head)
-    confirmed = country_data['total'].get('confirmed', 0)
-    recovered = country_data['total'].get('recovered', 0)
-    deceased = country_data['total'].get('deceased', 0)
-    tested = country_data['total'].get('tested', 0)
+        '''Extracting India Data.'''
+        ind_table = PrettyTable(summ_head)
+        confirmed = country_data['total'].get('confirmed', 0)
+        recovered = country_data['total'].get('recovered', 0)
+        deceased = country_data['total'].get('deceased', 0)
+        tested = country_data['total'].get('tested', 0)
 
-    delta_confirmed = str(confirmed) + '(+' + str(country_data['delta'].get('confirmed', 0)) + ')' if 'delta' in country_data else confirmed
-    delta_recovered = str(recovered) + '(+' + str(country_data['delta'].get('recovered', 0)) + ')' if 'delta' in country_data else recovered
-    delta_deceased = str(deceased) +  '(+' + str(country_data['delta'].get('deceased', 0)) + ')' if 'delta' in country_data else deceased
-    delta_tested = str(tested) + '(+' + str(country_data['delta'].get('tested', 0)) + ')'
-    active = confirmed - (recovered + deceased)
+        delta_confirmed = str(confirmed) + '(+' + str(country_data['delta'].get('confirmed', 0)) + ')' if 'delta' in country_data else confirmed
+        delta_recovered = str(recovered) + '(+' + str(country_data['delta'].get('recovered', 0)) + ')' if 'delta' in country_data else recovered
+        delta_deceased = str(deceased) +  '(+' + str(country_data['delta'].get('deceased', 0)) + ')' if 'delta' in country_data else deceased
+        delta_tested = str(tested) + '(+' + str(country_data['delta'].get('tested', 0)) + ')'
+        active = confirmed - (recovered + deceased)
 
-    ind_table.add_row([delta_confirmed, active, delta_recovered, delta_deceased, delta_tested])
-    ind_stats.add_row([f'{round((recovered/confirmed)*100,2)}%',
-                       f'{round((deceased/confirmed)*100,2)}%',
-                       f'{round((confirmed/tested)*100,2)}%'])
-    
-    
-    print(f'{ind_state_table}\n')
-    print(f' India Cases Summary (as on {country_ts}) '.center(70,'*'))
-    print(f'{ind_table}\n')
-    print(f' India Statistics '.center(60,'*'))
-    
-    print(ind_stats)
+        ind_table.add_row([delta_confirmed, active, delta_recovered, delta_deceased, delta_tested])
+        ind_stats.add_row([f'{round((recovered/confirmed)*100,2)}%',
+                           f'{round((deceased/confirmed)*100,2)}%',
+                           f'{round((confirmed/tested)*100,2)}%'])
+        
+        
+        print(f'{ind_state_table}\n')
+        print(f' India Cases Summary (as on {country_ts}) '.center(70,'*'))
+        print(f'{ind_table}\n')
+        print(f' India Statistics '.center(60,'*'))
+        
+        print(ind_stats)
 
-    #Sending SLACK Notification - Country's Data
-    india_msg = f"***** INDIA Cases ******\nDate: {country_ts}\nTotal: {confirmed}\nActive: {active}\nRecovered: {recovered}\nTests Done: {tested}\nDeaths: {deceased}"
-    if slack_notify:
-        Slack.slack_message(india_msg, __file__)
+        #Sending SLACK Notification - Country's Data
+        india_msg = f"***** INDIA Cases ******\nDate: {country_ts}\nTotal: {confirmed}\nActive: {active}\nRecovered: {recovered}\nTests Done: {tested}\nDeaths: {deceased}"
+        if slack_notify:
+            Slack.slack_message(india_msg, __file__)
+    except Exception as e :
+        print(f'EXCEPTION in "getCountryData()" Function: {e}')
 
 
 def getStateData(state):
@@ -169,7 +172,7 @@ def getStateData(state):
 
         
     except Exception as e:
-        print(f'EXCEPTION: {e}')
+        print(f'EXCEPTION in "getStateData()" Function: {e}')
 
 
 #Driver Code - Pass the State Code as the argument.
