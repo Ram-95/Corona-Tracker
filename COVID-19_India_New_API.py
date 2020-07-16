@@ -1,30 +1,35 @@
 '''Using the COVID-19 India API - https://api.covid19india.org/v3/min/data.min.json and fetching the required Data.'''
-import os
-import bs4 as bs
-import csv
-import requests
-import json
-from prettytable import PrettyTable
-import Slack_Push_Notification as Slack
+try:
+    import os
+    import bs4 as bs
+    import csv
+    import requests
+    import json
+    from prettytable import PrettyTable
+    import Slack_Push_Notification as Slack
 
-#COVID-19 API - Has all India's Data
-url = "https://api.covid19india.org/v3/min/data.min.json"
-r = requests.get(url).text
 
-#Slack Notification ON - 1; OFF - 0
-slack_notify = 1
+    #COVID-19 API - Has all India's Data
+    url = "https://api.covid19india.org/v3/min/data.min.json"
+    r = requests.get(url).text
 
-#This Dictionary stores the data of all the dates till now as
-d = json.loads(r)
+    #Slack Notification ON - 1; OFF - 0
+    slack_notify = 1
 
-#Dictionary to store the State Codes(Used in the API) and State Names
-#UN - UnAssigned and TT - Total India Cases are NOT present in this dictionary
-state_code = {'AN': 'Andaman and Nicobar', 'AP': 'Andhra Pradesh', 'AR': 'Arunachal Pradesh', 'AS': 'Assam', 'BR': 'Bihar',
-              'CH': 'Chandigarh', 'CT': 'Chattisgarh', 'DL': 'Delhi', 'DN': 'Dadra and Nagar Haveli', 'GA': 'Goa', 'GJ': 'Gujarat',
-              'HP': 'Himachal Pradesh', 'HR': 'Haryana', 'JH': 'Jharkhand', 'JK': 'Jammu and Kashmir', 'KA': 'Karnataka', 'KL': 'Kerala',
-              'LA': 'Ladakh', 'LD': 'Lakshadweep', 'MH': 'Maharashtra', 'ML': 'Meghalaya', 'MN': 'Manipur', 'MP': 'Madhya Pradesh',
-              'MZ': 'Mizoram', 'NL': 'Nagaland', 'OR': 'Odisha', 'PB': 'Punjab', 'PY': 'Puducherry', 'RJ': 'Rajasthan', 'SK': 'Sikkim',
-              'TG': 'Telangana', 'TN': 'Tamil Nadu', 'TR': 'Tripura', 'UP': 'Uttar Pradesh', 'UT': 'Uttarakhand', 'WB': 'West Bengal'}
+    #This Dictionary stores the data of all the dates till now as
+    d = json.loads(r)
+
+    #Dictionary to store the State Codes(Used in the API) and State Names
+    #UN - UnAssigned and TT - Total India Cases are NOT present in this dictionary
+    state_code = {'AN': 'Andaman and Nicobar', 'AP': 'Andhra Pradesh', 'AR': 'Arunachal Pradesh', 'AS': 'Assam', 'BR': 'Bihar',
+                  'CH': 'Chandigarh', 'CT': 'Chattisgarh', 'DL': 'Delhi', 'DN': 'Dadra and Nagar Haveli', 'GA': 'Goa', 'GJ': 'Gujarat',
+                  'HP': 'Himachal Pradesh', 'HR': 'Haryana', 'JH': 'Jharkhand', 'JK': 'Jammu and Kashmir', 'KA': 'Karnataka', 'KL': 'Kerala',
+                  'LA': 'Ladakh', 'LD': 'Lakshadweep', 'MH': 'Maharashtra', 'ML': 'Meghalaya', 'MN': 'Manipur', 'MP': 'Madhya Pradesh',
+                  'MZ': 'Mizoram', 'NL': 'Nagaland', 'OR': 'Odisha', 'PB': 'Punjab', 'PY': 'Puducherry', 'RJ': 'Rajasthan', 'SK': 'Sikkim',
+                  'TG': 'Telangana', 'TN': 'Tamil Nadu', 'TR': 'Tripura', 'UP': 'Uttar Pradesh', 'UT': 'Uttarakhand', 'WB': 'West Bengal'}
+
+except Exception as e:
+    print(f'EXCEPTION in Importing Modules: {e}')
 
 
 def getIndiaData():
@@ -84,7 +89,7 @@ def getIndiaData():
         if slack_notify:
             Slack.slack_message(india_msg, __file__)
     except Exception as e :
-        print(f'EXCEPTION in "getCountryData()" Function: {e}')
+        print(f'EXCEPTION in "getIndiaData()" Function: {e}')
 
 
 def getStateData(state):
