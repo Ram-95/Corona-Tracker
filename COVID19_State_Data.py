@@ -1,11 +1,9 @@
 # State Cases - Telangana
-import os
+
 import requests
-import csv
 from datetime import datetime
 import Slack_Push_Notification as Slack
 from prettytable import PrettyTable
-
 
 # This is the API End point where the web-page gets the data from JavaScript Code.
 site = 'https://covid19.telangana.gov.in/wp-json/acf/v3/options/covid19-cases'
@@ -38,4 +36,3 @@ print(state_summ)
 # Sending SLACK Notification
 msg = f"***** TELANGANA Cases ******\nDate: {date}\nTotal: {total}\nActive: {active}\nDeaths: {deaths}"
 Slack.slack_message(msg, __file__)
-
