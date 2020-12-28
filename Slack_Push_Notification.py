@@ -1,5 +1,5 @@
-#Slack Push Notification
-''' This script is used to get a Push Notification on Mobile using Slack.'''
+# Slack Push Notification
+# This script is used to get a Push Notification on Mobile using Slack
 import slack
 import os
 def slack_message(message, filename='Python Terminal'):
