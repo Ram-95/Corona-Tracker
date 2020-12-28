@@ -36,7 +36,6 @@ print(heading)
 print(state_summ)
 
 # Sending SLACK Notification
-msg = f"***** TELANGANA Cases ******\nDate: {date}\n
-Total: {total}\nActive: {active}\nDeaths: {deaths}"
+# msg = f"***** TELANGANA Cases ******\nDate: {date}\nTotal: {total}\nActive: {active}\nDeaths: {deaths}"
 Slack.slack_message(msg, __file__)
 
