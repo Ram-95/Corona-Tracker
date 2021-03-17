@@ -6,7 +6,7 @@ try:
     import requests
     import json
     from prettytable import PrettyTable
-    import Slack_Push_Notification as Slack
+    #import Slack_Push_Notification as Slack
 
 
     #COVID-19 API - Has all India's Data
@@ -14,7 +14,7 @@ try:
     r = requests.get(url).text
 
     #Slack Notification ON - 1; OFF - 0
-    slack_notify = 1
+    slack_notify = 0
 
     #This Dictionary stores the data of all the dates till now as
     d = json.loads(r)
@@ -105,7 +105,7 @@ def getStateData(state):
             print(f'EXCEPTION: No State Found with this Code')
 
         #CSV Filename and Path
-        os.chdir('C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python38\\Corona-Tracker\\')
+        #os.chdir('C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python38-32')
         state_filename = f'COVID-19_{state_code[state]}_Districts_Data.csv'
 
         #Writing the Header to the file

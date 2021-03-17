@@ -1,37 +1,38 @@
 DISTRICT,TOTAL,ACTIVE,RECOVERED,DECEASED
-Adilabad,137,122,15,0
-Bhadradri Kothagudem,126,122,4,0
+Adilabad,2871,2856,15,0
+Bhadradri Kothagudem,8988,8984,4,0
 Foreign Evacuees,33,33,0,0
-Hyderabad,33984,33656,305,23
-Jagtial,126,124,2,0
-Jangaon,165,164,1,0
-Jayashankar Bhupalapally,125,125,0,0
-Jogulamba Gadwal,136,110,25,1
-Kamareddy,339,331,8,0
-Karimnagar,865,849,16,0
-Khammam,267,264,3,0
-Komaram Bheem,54,52,2,0
-Mahabubabad,210,209,1,0
-Mahabubnagar,348,340,8,0
-Mancherial,202,201,0,1
-Medak,377,373,4,0
-Medchal Malkajgiri,2413,2403,9,1
-Mulugu,66,64,2,0
-Nagarkurnool,187,185,2,0
-Nalgonda,688,676,12,0
-Narayanpet,48,47,0,1
-Nirmal,55,42,13,0
-Nizamabad,439,409,30,0
+Hyderabad,79774,79446,305,23
+Jagtial,6161,6159,2,0
+Jangaon,3627,3626,1,0
+Jayashankar Bhupalapally,2516,2516,0,0
+Jogulamba Gadwal,3367,3341,25,1
+Kamareddy,5609,5601,8,0
+Karimnagar,13788,13772,16,0
+Khammam,10600,10597,3,0
+Komaram Bheem,1606,1604,2,0
+Mahabubabad,5422,5421,1,0
+Mahabubnagar,5017,5009,8,0
+Mancherial,5453,5452,0,1
+Medak,3681,3677,4,0
+Medchal Malkajgiri,19624,19614,9,1
+Mulugu,2976,2974,2,0
+Nagarkurnool,4408,4406,2,0
+Nalgonda,12360,12348,12,0
+Narayanpet,1122,1121,0,1
+Nirmal,2630,2617,13,0
+Nizamabad,8140,8110,30,0
 Other State,250,250,0,0
-Peddapalli,198,197,1,0
-Rajanna Sircilla,206,204,2,0
-Ranga Reddy,3901,3882,17,2
-Sangareddy,821,815,6,0
-Siddipet,158,157,1,0
-Suryapet,359,335,24,0
-Unknown,457,37066,37115,408
-Vikarabad,204,188,15,1
-Wanaparthy,161,161,0,0
-Warangal Rural,285,285,0,0
-Warangal Urban,747,724,23,0
-Yadadri Bhuvanagiri,122,122,0,0
+Peddapalli,5824,5823,1,0
+Rajanna Sircilla,5104,5102,2,0
+Ranga Reddy,24277,24258,17,2
+Sangareddy,8002,7996,6,0
+Siddipet,7939,7938,1,0
+Suryapet,7064,7040,24,0
+Unknown,457,291191,290079,1569
+Vikarabad,2557,2541,15,1
+Wanaparthy,3552,3552,0,0
+Warangal Rural,3770,3770,0,0
+Warangal Urban,11830,11807,23,0
+Yadadri Bhuvanagiri,4031,4031,0,0
+Yadgir,39,39,0,0
